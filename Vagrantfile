@@ -17,7 +17,7 @@ Vagrant.configure("2") do |config|
 
   config.vm.provision "shell", inline: <<-SHELL
     apt-get update
-    apt-get install -y sqlite3 ruby-sequel ruby-chronic ruby-rspec ruby-dev
+    apt-get install -y libsqlite3-dev sqlite3 ruby-sequel ruby-chronic ruby-rspec ruby-dev
     gem install timetrap
   SHELL
 
