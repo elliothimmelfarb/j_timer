@@ -49,3 +49,59 @@ and you should be all set. If you make this change after you have already run
 `vagrant up` and the VM is running right now, then you'll need to bring the VM down
 using `vagrant halt` before launching it again with `vagrant up` in order to get that
 window.
+
+### Vagrant cheatsheet
+```
+vagrant up #Launches a VM
+vagrant ssh #Will SSH you into a terminal session in the VM if you're in a POSIX-compatible shell.
+vagrant halt #Shuts a VM down. You should do this before shutting your host computer off or putting it to sleep.
+vagrant destroy #Will destroy a botched VM.
+/vagrant #The directory in the VM that corresponds to the directory on your host system that the VM lives in.
+#You can pass through files from the host to the VM and vice-versa through this directory.
+```
+There's a lot more to Vagrant than this, but the above is the basics necessary
+to interact with the VM. Check out https://www.vagrantup.com for more in-depth tutorials.
+
+### Timetrap cheatsheet
+```
+t sheet oper.bdev.strt #Will check you into a sheet named 'oper.bdev.strt'
+t in Work on the thing #Will start a timer in the sheet you're checked into with the comment message 'Working on the thing.'
+t out #Will stop the timer for the sheet you're checked into.
+t in --at '10 minutes ago' Work on something else #Will start a timer, backlogging it to 10 minutes ago, with the comment message 'Working on something else.'
+t out --at '5 minutes ago' #Will check you out from the current sheet's timer as of 5 minutes ago.
+t in --at '2017-01-01 09:00' Working on New Years Day. #Will automatically clock you in at that time. You can also put a discreet time in the past.
+t out --at '2017-01-01 10:00' #Will automatically check you at this time.
+
+t list #Will show you a list of all your timesheets aka billing codes.
+
+t today #Will generate a report for time spent in the current sheet for just today.
+t today all #Same as above, but includes all the timesheets you've worked in today.
+
+t yesterday #Same as above, but for yesterday.
+t yesterday all #Same as above, but for yesterday.
+
+t week #Same as above, but since Sunday of this week.
+t week all #Same as above, but since Sunday of this week.
+
+t today all -f csv #Same as above, but CSV formatted.
+t week all -f csv #Same as above, but CSV formatted.
+
+t backend #Gets you into the sqlite backend in case you need to fix stuff using SQL.
+```
+
+### Linux command line cheatsheet
+```
+| #Pipes the output from the command preceding this into the input for the command following it.
+> #Pipes the output from the command preceding this into some connection, like a file.
+grep #Can be used to search through text.
+less #Like 'more' on Windows, it shows a screen of things that you can look through.
+```
+
+### Examples:
+```
+t list | grep oper #Will search all of your teamsheets for those containing the text 'oper' and print them out.
+
+t --help | less #Makes it easier to read through Timetrap's help documentation.
+
+t week all -f csv > thisWeek.csv #Creates a CSV containing all of your 't in' and 't out' information for all timesheets for the week.
+```
