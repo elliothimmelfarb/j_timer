@@ -8,7 +8,7 @@ To use this VM you need to have installed:
 * Virtualbox - https://www.virtualbox.org
 * Vagrant - https://www.vagrantup.com
 
-===One way to get this working
+### One way to get this working
 Once the above two apps are installed create a directory in which your VM will live.
 Then you can download the Vagrantfile into that direcotry.
 Then open up a terminal application like `cmd.exe`, `powershell`, `cygwin`, `git-bash`,
@@ -32,7 +32,7 @@ vagrant ssh
 and find yourself logged into the machine. If you used `cmd.exe` or `powershell` you
 might want to use an ssh client like PuTTY to get into the machine.
 
-===Another way to get this working
+### Another way to get this working
 If you also have `git` and `git-bash` installed, then just open `git-bash`, navigate to
 where you want your parent directory to be and run
 ```
@@ -41,10 +41,10 @@ git clone https://github.com/jjcad/j_timer
 Then navigate into the `j_timer` directory and run `vagrant up`, wait for it download,
 boot, and install your software on the first run, then `vagrant ssh` into the box.
 
-===If you don't want to use ssh at all
+### If you don't want to use ssh at all
 You can have `vagrant up` also launch a Virtualbox GUI window that will give you a
 command prompt if you so choose. If this is your desired way to interact with the VM then
-simply open the Vagrantfile in a text editor, and switch `vb.gui = false` to `vb.gui = true`
+simply open the Vagrantfile in a text editor, and switch `vb.gui # false` to `vb.gui # true`
 and you should be all set. If you make this change after you have already run 
 `vagrant up` and the VM is running right now, then you'll need to bring the VM down
 using `vagrant halt` before launching it again with `vagrant up` in order to get that
