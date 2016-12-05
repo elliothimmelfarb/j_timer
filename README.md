@@ -44,7 +44,7 @@ boot, and install your software on the first run, then `vagrant ssh` into the bo
 ### If you don't want to use ssh at all
 You can have `vagrant up` also launch a Virtualbox GUI window that will give you a
 command prompt if you so choose. If this is your desired way to interact with the VM then
-simply open the Vagrantfile in a text editor, and switch `vb.gui # false` to `vb.gui # true`
+simply open the Vagrantfile in a text editor, and switch `vb.gui = false` to `vb.gui = true`
 and you should be all set. If you make this change after you have already run 
 `vagrant up` and the VM is running right now, then you'll need to bring the VM down
 using `vagrant halt` before launching it again with `vagrant up` in order to get that
@@ -58,6 +58,10 @@ vagrant halt #Shuts a VM down. You should do this before shutting your host comp
 vagrant destroy #Will destroy a botched VM.
 /vagrant #The directory in the VM that corresponds to the directory on your host system that the VM lives in.
 #You can pass through files from the host to the VM and vice-versa through this directory.
+
+# The next two are very useful since they are a bit faster than vagrant up/halt.
+vagrant suspend #Will freeze the VM's state and bring it down.
+vagrant resume #Will unfreeze a VM's state and make it run again.
 ```
 There's a lot more to Vagrant than this, but the above is the basics necessary
 to interact with the VM. Check out https://www.vagrantup.com for more in-depth tutorials.
@@ -87,6 +91,8 @@ t today all -f csv #Same as above, but CSV formatted.
 t week all -f csv #Same as above, but CSV formatted.
 
 t backend #Gets you into the sqlite backend in case you need to fix stuff using SQL.
+
+t display all --start 'YYYY-MM-DD' --end 'YYYY-MM-DD' #Displays all timesheet entries between two timestamps.
 ```
 
 ### Linux command line cheatsheet
