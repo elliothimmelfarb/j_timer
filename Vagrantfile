@@ -15,6 +15,8 @@ Vagrant.configure("2") do |config|
     vb.cpus = "1"
   end
 
+  config.vm.synced_folder "./", "/home/vagrant"
+
   config.vm.provision "shell", inline: <<-SHELL
     apt-get update
     apt-get install -y libsqlite3-dev sqlite3 ruby-sequel ruby-chronic ruby-rspec ruby-dev
