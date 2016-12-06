@@ -1,6 +1,11 @@
 j_timer
 =======================
 
+# Note about migrating from a previous version
+If you're hoping to migrate from an older version, then there are a few steps you need to take that have not been written up yet. If you choose to do a `vagrant destroy` without following the correct procedure (which has yet to be written), then you will lose your timetrap entries that already exist. Obviously, this is not advisable. 
+
+
+# Everything below here is what is normally in the README.md file
 This is just a Vagrantfile that will create an Ubuntu VirtualBox VM to run Timetrap
 (https://github.com/samg/timetrap).
 
